@@ -1,5 +1,6 @@
 # DAA_Repo README
-This is a Repo Made for submissions for the course CS2004-Design and Analysis of Algorithms in Shiv Nadar University, Chennai
+This is a Repo Made for submissions [by Srivatsan - 21011101129] for the course CS2004-Design and Analysis of Algorithms in Shiv Nadar University, Chennai
+
 
 Consists of the following:
 
@@ -9,6 +10,17 @@ Consists of the following:
 4. ANN using Cultural Algorithm Optimization
 5. ANN using Particle Swarm Optimization
 6. ANN using Ant Colony Optimizatoin
+
+
+## Notes for the ANN
+
+Packages used: 
+- Sci-Kit-Learn
+- numpy
+- Pandas
+- Keras
+
+Optimizers were built from scratch using numpy array functions and numpy.random functions
 
 
 ## 1. Needleman-Wunsch Algorithm [ CIA -1 ]
