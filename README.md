@@ -29,7 +29,7 @@ To run the program, compile the source code using a C compiler such as GCC:
 Then, run the program and enter the two DNA sequences when prompted:
 `./needleman_wunsch
 Enter sequence 1: ATCG
-Enter sequence 2: ACGT'
+Enter sequence 2: ACGT`
 
 The program will output the matching score and the two aligned sequences.
 
@@ -97,3 +97,50 @@ Parameters:
 - generations: The number of generations to run the algorithm.
 - mutation_rate: The probability of mutating an individual.
 - belief_space_size: The size of the belief space.
+
+### Particle Swarm Optimization
+
+Particle Swarm Optimization (PSO) is a population-based stochastic optimization algorithm that was inspired by the social behavior of bird flocking or fish schooling. 
+
+Steps: 
+
+1. Initialize a swarm of particles with random positions and velocities.
+2. Evaluate the fitness of each particle.
+3. Update the personal best-known position and fitness for each particle based on their current position and fitness.
+4. Update the global best-known position and fitness based on the personal best-known positions and fitnesses of all particles.
+5. Adjust the velocity and position of each particle based on their personal best-known position and the global best-known position, using the following equation:
+
+velocity(t+1) = w * velocity(t) + c1 * r1 * (personal_best_position - current_position) + c2 * r2 * (global_best_position - current_position)
+
+position(t+1) = current_position + velocity(t+1)
+
+where w is the inertia weight, c1 and c2 are the cognitive and social learning coefficients, and r1 and r2 are random values between 0 and 1.
+
+6. Clip the particle's position to the search space boundaries if necessary.
+7. Repeat for a fixed number of iterations or until a convergence criterion is met.
+8. Return the global best-known position as the optimal solution.
+
+### Ant Colony Optimization
+
+Ant Colony Optimization (ACO) is a metaheuristic algorithm that is inspired by the foraging behavior of ants. The algorithm is used for optimization problems and is particularly suited to problems that can be modeled as a graph.
+
+The ACO algorithm starts by initializing a population of ants with random solutions to the problem. The ants then follow pheromone trails left by other ants as they search for food. In the ACO algorithm, the pheromone trails are represented as a matrix. Each ant constructs a solution to the problem by probabilistically selecting the next component of the solution based on the pheromone level of that component.
+
+1. Initialize the pheromone matrix with a value of 1 for each element.
+2. Initialize the best weights and the best loss to None and 99, respectively.
+3. For each iteration:
+  1. Initialize an ant population and ant accuracies.
+  2. For each ant:
+    1. Create a weight matrix with dimensions (12,6).
+  3. For each element of the weight matrix:
+    - If a randomly generated value is less than the corresponding element in the pheromone matrix, set the value of the element to a random number drawn from a normal distribution with mean 0 and standard deviation 1.
+  4. Evaluate the loss of the weight matrix using the fitness function.
+  5.. Add the weight matrix and its corresponding loss to the ant population and ant accuracies, respectively.
+3. If the loss of the weight matrix is better than the current best loss, update the best weights and the best loss.
+4. Update the pheromone matrix:
+  1. For each element of the pheromone matrix, reduce its value by a factor of the evaporation rate.
+  2. For each ant in the population:
+    1. For each element of the weight matrix of the ant:
+      1. If the value of the element is not equal to 0, increase the value of the corresponding element in the pheromone matrix by Q divided by the loss of the ant multiplied by the value of the element in the weight matrix.
+  3. If the current iteration is a multiple of 10, print the current iteration and the current best loss.
+5. Return the best weights.
