@@ -27,9 +27,9 @@ To run the program, compile the source code using a C compiler such as GCC:
 ```gcc needleman_wunsch.c -o needleman_wunsch```
 
 Then, run the program and enter the two DNA sequences when prompted:
-```./needleman_wunsch
+`./needleman_wunsch
 Enter sequence 1: ATCG
-Enter sequence 2: ACGT```
+Enter sequence 2: ACGT'
 
 The program will output the matching score and the two aligned sequences.
 
