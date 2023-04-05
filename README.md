@@ -144,3 +144,26 @@ The ACO algorithm starts by initializing a population of ants with random soluti
       1. If the value of the element is not equal to 0, increase the value of the corresponding element in the pheromone matrix by Q divided by the loss of the ant multiplied by the value of the element in the weight matrix.
   3. If the current iteration is a multiple of 10, print the current iteration and the current best loss.
 5. Return the best weights.
+
+
+## Analysis
+
+#### Done using Accuracy
+
+For Iterations/Generations = 50 
+and For the Same PreProcessing
+
+Using the Neural Network Architecture:
+
+- 11 Input Nodes
+- 6 Hidden Layer Nodes
+- 1 Output Node
+
+![image](https://user-images.githubusercontent.com/100481554/230130919-2e419feb-266f-47b1-948c-48fad67396d5.png)
+
+The accuracies are as follows: 
+
+1. GA - 82.06% 
+2. CA - 89.73%
+3. PSO - 77.06%
+4. ACO - 82.26
